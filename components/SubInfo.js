@@ -48,7 +48,8 @@ export const ImageCmp = ({ imgUrl, index }) => {
             style={{
                 width: 48,
                 height: 48,
-                marginLeft: index === 0 ? 0 : -SIZES.font
+                marginLeft: index === 0 ? 0 : -SIZES.font,
+                borderRadius: 400/ 2
             }}
         />
     )

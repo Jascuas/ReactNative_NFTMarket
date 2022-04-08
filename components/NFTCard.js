@@ -1,13 +1,14 @@
-import { View, Image, Text } from 'react-native'
+import { View, Image, WebView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 import { COLORS, SIZES, SHADOWS, assets } from '../constants'
 import { CircleButton, RectButton } from '../components'
 import { SubInfo, EthPrice, NFTTitle } from './SubInfo'
+import { Video } from 'expo-av';
 
-
-const NFTCard = ({ data }) => {
+export const NFTCard = ({ data }) => {
   const navigation = useNavigation()
+  console.log(data.path)
 
   return (
     <View style={{
@@ -17,18 +18,36 @@ const NFTCard = ({ data }) => {
       margin: SIZES.base,
       ...SHADOWS.dark
     }}>
-      <View style={{ width: "100%", height: 250 }}>
-        <Image
-          source={data.image}
-          resizeMode="cover"
-          style={{
-            width: "100%",
-            height: "100%",
-            borderTopLeftRadius: SIZES.font,
-            borderTopRightRadius: SIZES.font
-          }}
-        />
 
+      <View style={{ width: "100%", height: data.orientation === "portrait" ? 600 : 300 }}>
+        {data.type == "image" ?
+          <Image
+            source={data.path}
+            resizeMode="cover"
+            style={{
+              width: "100%",
+              height: "100%",
+              borderTopLeftRadius: SIZES.font,
+              borderTopRightRadius: SIZES.font
+            }}
+          />
+          :
+
+          <Video
+            isLooping
+            shouldPlay 
+            source={{
+              uri: data.path
+            }}
+            resizeMode="cover"
+            style={{
+              width: "100%",
+              height: "100%",
+              borderTopLeftRadius: SIZES.font,
+              borderTopRightRadius: SIZES.font
+            }}
+          />
+        }
         <CircleButton imgUrl={assets.heart} right={10} top={10} />
 
       </View>
@@ -63,4 +82,3 @@ const NFTCard = ({ data }) => {
   )
 }
 
-export default NFTCard

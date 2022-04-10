@@ -99,7 +99,8 @@ export const SubInfo = () => {
             paddingHorizontal: SIZES.font,
             marginTop: -SIZES.extraLarge,
             flexDirection: "row",
-            justifyContent: 'space-between'
+            justifyContent: 'space-between',
+            zIndex: 3
         }}>
             <People />
             <EndDate />

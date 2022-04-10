@@ -8,7 +8,7 @@ import { Video } from 'expo-av';
 
 export const NFTCard = ({ data }) => {
   const navigation = useNavigation()
-  console.log(data.path)
+
 
   return (
     <View style={{

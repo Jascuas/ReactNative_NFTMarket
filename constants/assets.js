@@ -4,7 +4,7 @@ import heart from "../assets/icons/heart.png";
 import left from "../assets/icons/left.png";
 import search from "../assets/icons/search.png";
 
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo_dribble.png";
 
 const nft01 = "https://dev.e-rescuesystem.com/wp-content/uploads/2022/04/donutAnimation.mp4";
 const nft02 = "https://dev.e-rescuesystem.com/wp-content/uploads/2022/04/fire.mp4";

@@ -25,7 +25,7 @@ const nft15 = "https://dev.e-rescuesystem.com/wp-content/uploads/2022/04/donutEa
 const nft16 = "https://dev.e-rescuesystem.com/wp-content/uploads/2022/04/donutEater09.mp4";
 const nft17 = "https://dev.e-rescuesystem.com/wp-content/uploads/2022/04/donutEater10.mp4";
 
-
+import person from "../assets/images/person.jpg";
 import person01 from "../assets/images/person01.webp";
 import person02 from "../assets/images/person02.webp";
 import person03 from "../assets/images/person03.webp";
@@ -57,6 +57,7 @@ export default {
   nft16,
   nft17,
 
+  person,
   person01,
   person02,
   person03,

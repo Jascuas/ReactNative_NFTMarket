@@ -100,7 +100,6 @@ export const SubInfo = () => {
             marginTop: -SIZES.extraLarge,
             flexDirection: "row",
             justifyContent: 'space-between',
-            zIndex: 3
         }}>
             <People />
             <EndDate />

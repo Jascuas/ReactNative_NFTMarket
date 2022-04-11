@@ -1,46 +1,47 @@
 import React from 'react'
 import { View, Image, Text, SafeAreaView, StatusBar, FlatList } from 'react-native'
 
-import { COLORS, SIZES, SHADOWS, assets } from '../constants'
+import { COLORS, SIZES, FONTS, SHADOWS, assets } from '../constants'
 import { CircleButton, RectButton, FocusStatusBar, DetailsDesc, DetailsBid } from '../components'
 import { SubInfo } from '../components/SubInfo'
 import { Video } from 'expo-av';
 
 
-const DetailsHeader = ({data, navigation}) => (
-  
+const DetailsHeader = ({ data, navigation }) => (
+
   <View style={{ width: "100%", height: data.orientation === "portrait" ? 600 : 300, justifyContent: 'center', alignItems: 'center', ...SHADOWS.dark }}>
-  {data.type == "image" ?
-    <Image
-      source={data.path}
-      resizeMode="cover"
-      style={{
-        width: "100%",
-        height: "100%",
-      }}
-    />
-    :
-    <Video
-      isLooping
-      shouldPlay 
-      source={{
-        uri: data.path
-      }}
-      resizeMode="cover"
-      style={{
-        width: "100%",
-        height: "100%"
-       
-      }}
-    />
-  }
-   {/* <CircleButton 
+    {data.type == "image" ?
+      <Image
+        source={data.path}
+        resizeMode="cover"
+        style={{
+          width: "100%",
+          height: "100%",
+        }}
+      />
+      :
+      <Video
+        isLooping
+        shouldPlay
+        source={{
+          uri: data.path
+        }}
+        resizeMode="cover"
+        style={{
+          width: "100%",
+          height: "100%"
+
+        }}
+      />
+    }
+    {/* <CircleButton 
    imgUrl={assets.left}
 
      handlePress={() => navigation.goBack()}
      /> */}
-   <CircleButton imgUrl={assets.heart} right={15} top={10} />
-</View>
+    <CircleButton imgUrl={assets.heart} right={15} top={10} />
+    <SubInfo />
+  </View>
 )
 
 
@@ -69,14 +70,28 @@ const Details = ({ route, navigation }) => {
       </View>
       <FlatList
         data={data.bids}
-        renderItem={({ item }) => <DetailsBid bid={item} />}
+        renderItem={({ item }) => <DetailsBid bid={item}  />}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: SIZES.extraLarge * 3}}
+        contentContainerStyle={{ paddingBottom: SIZES.extraLarge * 3 }}
         ListHeaderComponent={() => (
           <React.Fragment>
             <DetailsHeader data={data} navigation={navigation} />
-            <SubInfo />
+            
+            <View style={{ padding: SIZES.font }}>
+              <DetailsDesc data={data} />
+              {data.bids.length > 0 && (
+                <Text
+                  style={{
+                    fontSize: SIZES.font,
+                    fontFamily: FONTS.semiBold,
+                    color: COLORS.primary,
+                  }}
+                >
+                  Current Bids
+                </Text>
+              )}
+            </View>
           </React.Fragment>
         )}
       />

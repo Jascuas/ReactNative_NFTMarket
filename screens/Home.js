@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { View, SafeAreaView, FlatList, Text } from 'react-native'
+import { View, SafeAreaView, FlatList } from 'react-native'
 
 import { COLORS, NFTData } from '../constants';
 import { HomeHeader, FocusStatusBar } from '../components';
@@ -36,6 +36,7 @@ const Home = () => {
             ListHeaderComponent={<HomeHeader onSearch={handleSearch}/>}
           />
         </View>
+
         <View style={{
           position: "absolute",
           top: 0,

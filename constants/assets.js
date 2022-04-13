@@ -9,8 +9,8 @@ import logo from "../assets/images/logo_dribble.png";
 const nft01 = "https://dev.e-rescuesystem.com/wp-content/uploads/2022/04/donutAnimation.mp4";
 const nft02 = "https://dev.e-rescuesystem.com/wp-content/uploads/2022/04/fire.mp4";
 import nft03 from "../assets/images/portals.png";
-const nft04 = "https://dev.e-rescuesystem.com/wp-content/uploads/2022/04/satisfyingAnimation01.mp4";
-const nft05 = "https://dev.e-rescuesystem.com/wp-content/uploads/2022/04/scifiEnviroment.mp4";
+const nft04 = "https://dev.e-rescuesystem.com/wp-content/uploads/2022/04/satisfyingAnimation01.m4v";
+const nft05 = "https://dev.e-rescuesystem.com/wp-content/uploads/2022/04/Scifienviroment.m4v";
 import nft06 from "../assets/images/sun.png";
 const nft07 = "https://dev.e-rescuesystem.com/wp-content/uploads/2022/04/card.mp4";
 

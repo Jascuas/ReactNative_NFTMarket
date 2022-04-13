@@ -2,12 +2,14 @@ import { useState } from 'react'
 import { View, Text } from 'react-native'
 
 import { EthPrice, NFTTitle } from '../components/SubInfo'
-import { COLORS, SIZES, FONTS, SHADOWS, assets } from '../constants'
+import { COLORS, SIZES, FONTS } from '../constants'
 
 
 const DetailsDesc = ({ data }) => {
   const [readMore, setReadMore] = useState(false)
+  
   const ReadMore = () => (
+    
     <Text 
     onPress={() => {setReadMore(!readMore)}}
     style={{

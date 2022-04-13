@@ -1,15 +1,34 @@
-import { View, Image, WebView } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
-
+import { View, Image, ActivityIndicator } from 'react-native'
+import { useNavigation, } from '@react-navigation/native'
+import  { useState } from 'react'
 import { COLORS, SIZES, SHADOWS, assets } from '../constants'
 import { CircleButton, RectButton } from '../components'
 import { SubInfo, EthPrice, NFTTitle } from './SubInfo'
 import { Video } from 'expo-av';
 
 export const NFTCard = ({ data }) => {
+  const [loading, setLoading] = useState(true)
   const navigation = useNavigation()
+  const onLoading = (value) => {
+    setLoading(value)
+  }
+  const updatePlaybackCallback = (status) => {
 
-
+    setLoading(!status.isPlaying );
+  }
+  const Loader = () => (
+    <View style={{
+      width: '100%',
+      position: 'absolute',
+      paddingVertical: SIZES.font,
+      justifyContent: 'center',
+      alignItems: 'center',
+      zIndex: 2,
+      height: data.orientation === "portrait" ? 600 : 300
+    }}>
+      <ActivityIndicator size="large" color="#0000ff" />
+    </View>
+  )
   return (
     <View style={{
       backgroundColor: COLORS.white,
@@ -20,6 +39,10 @@ export const NFTCard = ({ data }) => {
     }}>
 
       <View style={{ width: "100%", height: data.orientation === "portrait" ? 600 : 300 }}>
+      {loading &&
+          <Loader />
+        }
+        
         {data.type == "image" ?
           <Image
             source={data.path}
@@ -30,12 +53,13 @@ export const NFTCard = ({ data }) => {
               borderTopLeftRadius: SIZES.font,
               borderTopRightRadius: SIZES.font
             }}
+            onLoadEnd={() => onLoading(false, "end")}
           />
           :
 
           <Video
             isLooping
-            shouldPlay 
+            shouldPlay
             source={{
               uri: data.path
             }}
@@ -46,7 +70,9 @@ export const NFTCard = ({ data }) => {
               borderTopLeftRadius: SIZES.font,
               borderTopRightRadius: SIZES.font
             }}
+            onPlaybackStatusUpdate={updatePlaybackCallback}
           />
+          
         }
         <CircleButton imgUrl={assets.heart} right={10} top={10} />
 

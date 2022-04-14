@@ -16,6 +16,9 @@ export const NFTCard = ({ data }) => {
 
     setLoading(!status.isPlaying );
   }
+  const orientation = data.orientation === "portrait" ? 600 : data.orientation === "square" ?
+  450 : 300
+
   const Loader = () => (
     <View style={{
       width: '100%',
@@ -24,7 +27,7 @@ export const NFTCard = ({ data }) => {
       justifyContent: 'center',
       alignItems: 'center',
       zIndex: 2,
-      height: data.orientation === "portrait" ? 600 : 300
+      height: orientation
     }}>
       <ActivityIndicator size="large" color="#0000ff" />
     </View>
@@ -38,7 +41,7 @@ export const NFTCard = ({ data }) => {
       ...SHADOWS.dark
     }}>
 
-      <View style={{ width: "100%", height: data.orientation === "portrait" ? 600 : 300 }}>
+      <View style={{ width: "100%", height: orientation }}>
       {loading &&
           <Loader />
         }

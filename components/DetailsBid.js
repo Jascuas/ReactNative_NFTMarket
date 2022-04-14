@@ -1,7 +1,7 @@
 import { View, Text, Image } from 'react-native'
 
 import { EthPrice } from '../components/SubInfo'
-import { COLORS, SIZES, FONTS, } from '../constants'
+import { COLORS, SIZES, FONTS, SHADOWS } from '../constants'
 
 const DetailsBid = ({bid}) => {
 
@@ -14,15 +14,15 @@ const DetailsBid = ({bid}) => {
         alignItems: "center",
         marginVertical: SIZES.base,
         paddingHorizontal: SIZES.base * 2,
+        backgroundColor: COLORS.white,
       }}
       key={bid.id}
     >
       <Image
         source={bid.image}
         resizeMode="contain"
-        style={{ width: 48, height: 48, borderRadius: 400/ 2 }}
+        style={{ width: 48, height: 48, borderRadius: 400/ 2,  }}
       />
-
       <View
         style={{
           flex: 1,

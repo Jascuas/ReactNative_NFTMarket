@@ -5,5 +5,6 @@ import DetailsBid from "./DetailsBid";
 import DetailsDesc from "./DetailsDesc";
 
 export {
-    HomeHeader, FocusStatusBar, CircleButton, RectButton, DetailsBid, DetailsDesc
+    HomeHeader, FocusStatusBar, CircleButton,
+     RectButton, DetailsBid, DetailsDesc,
 }

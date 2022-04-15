@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ReactNative_NFTMarket",
-    "slug": "ReactNative_NFTMarket",
+    "name": "ReactNative-NFTMarket",
+    "slug": "ReactNative-NFTMarket",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": ""
   }
 }

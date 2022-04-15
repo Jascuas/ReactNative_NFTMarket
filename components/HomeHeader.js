@@ -22,7 +22,7 @@ const HomeHeader = ({ onSearch }) => {
           <Image
             source={assets.person}
             resizeMode="contain"
-            style={{ width: '100%', height: '100%', borderRadius: 250 }}
+            style={{ width: '100%', height: '100%', borderRadius: 60 }}
           />
           <Image
             source={assets.badge}

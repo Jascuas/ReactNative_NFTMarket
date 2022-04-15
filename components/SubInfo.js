@@ -49,7 +49,7 @@ export const ImageCmp = ({ imgUrl, index }) => {
                 width: 48,
                 height: 48,
                 marginLeft: index === 0 ? 0 : -SIZES.font,
-                borderRadius: 400/ 2
+                borderRadius: 30
             }}
         />
     )
@@ -73,7 +73,8 @@ export const EndDate = () => {
             alignItems: 'center',
             ...SHADOWS.light,
             elevation: 1,
-            maxWidth: '50%'
+            maxWidth: '50%',
+            borderRadius: 10
         }}>
             <Text style={{
                 fontFamily: FONTS.regular,
